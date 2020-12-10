@@ -36,7 +36,6 @@ public class Main {
         for(int i = 0; i < plainTxtArray.length; i++) {
             myArray[i] = Integer.parseInt(plainTxtArray[i]);
         }
-        //System.out.println(Arrays.toString(myArray));
 
         //creating a 2D array of numbers
         int row = 20;
@@ -49,11 +48,11 @@ public class Main {
             }
         }
 
-        DEFATest test1 = new DEFATest(myArray, 20, myTwoDArray);
-        int checkMaxInRow = test1.findMaxProductInRow();
-        int checkMaxInColumn = test1.findMaxProductInColumns();
-        int checkMaxInAllPrincipalDiagonalsAtOnce = test1.findMaxProductInAllPrincipalDiagonals();
-        int checkMaxInAllSecondaryDiagonalsAtOnce = test1.findMaxProductInAllSecondaryDiagonals();
+        DEFATest myTest = new DEFATest(myArray, 20, myTwoDArray);
+        int checkMaxInRow = myTest.findMaxProductInRow();
+        int checkMaxInColumn = myTest.findMaxProductInColumns();
+        int checkMaxInAllPrincipalDiagonalsAtOnce = myTest.findMaxProductInAllPrincipalDiagonals();
+        int checkMaxInAllSecondaryDiagonalsAtOnce = myTest.findMaxProductInAllSecondaryDiagonals();
 
         if (checkMaxInRow == -1 || checkMaxInColumn == -1 ||
                 checkMaxInAllPrincipalDiagonalsAtOnce == -1 || checkMaxInAllSecondaryDiagonalsAtOnce == -1 ){
@@ -67,7 +66,6 @@ public class Main {
             System.out.println("Highest possible product in all possible secondary diagonals is = " +
                     checkMaxInAllSecondaryDiagonalsAtOnce);
         }
-
         int largest = Math.max(checkMaxInRow,Math.max(checkMaxInColumn,Math.max(checkMaxInAllPrincipalDiagonalsAtOnce,
                 checkMaxInAllSecondaryDiagonalsAtOnce)));
         System.out.println("And finally highest possible product of all is = " + largest);
